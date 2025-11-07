@@ -1,9 +1,10 @@
-#  🌀 Physics-Informed tempoGAN for 3D Turbulence Reconstruction
+# Physics-Informed tempoGAN for 3D Turbulence Reconstruction
 
 This repository contains the implementation of a physics-informed tempoGAN framework for reconstructing and predicting freely decaying isotropic turbulence.
 Our model enhances spatial resolution and temporal coherence of turbulent flow fields while enforcing physical consistency through spectral and divergence-free constraints.
 
-# 🌊 Overview
+
+# Overview
 
 Turbulent flows are inherently chaotic and multi-scale, making accurate reconstruction extremely challenging.
 We adopt a GAN-based spatio-temporal super-resolution model (tempoGAN) combined with physics-informed loss functions, achieving high-fidelity and physically plausible results for decaying isotropic turbulence.
@@ -18,18 +19,30 @@ Physics-informed losses: spectral energy and divergence-free constraints
 
 Modular code design for training, testing, and visualization
 
-# 📘 Data Preparation
+# Project Structure
+
+├── train_tempoGAN.py        # Training script
+├── test_tempoGAN.py         # Inference and evaluation
+├── tempoGAN_model.py        # Generator and discriminators definition
+├── losses.py                # GAN, feature matching, and physics-based losses
+├── dns_preprocess.py        # DNS data preprocessing pipeline
+├── utils.py                 # Helper functions (normalization, visualization, etc.)
+└── README.md
+
+# Data Preparation
 
 The dataset contains 3D DNS velocity fields (U, V, W) for freely decaying isotropic turbulence.
 Before training, preprocess the data using the provided data preparation scripts.
 
-# 🚀 Training
+
+# Training
 
 Train the tempoGAN with physics-informed losses:
 
 python train_tempoGAN.py
 
-# 🔍 Testing & Visualization
+
+# Testing & Visualization
 
 Run the testing and visualization scripts:
 
@@ -38,7 +51,7 @@ python test_tempoGAN.py
 
 Outputs include reconstructed 3D velocity fields and optionally their spectral energy comparison with DNS data.
 
-# 🧠 Model Highlights
+# Model Highlights
 Component	Description
 Generator (G)	3D U-Net–like architecture designed for volumetric super-resolution of turbulence fields.
 Spatial Discriminator (Dₛ)	Evaluates spatial realism of each high-resolution frame.
@@ -47,7 +60,21 @@ Physics-informed Losses	Incorporate spectral and divergence-free constraints to 
 Quarter Jumble Strategy	With a small probability, low-resolution inputs are partially shuffled (¼-volume permutation) to prevent the discriminator from becoming overly dominant, maintaining a balanced adversarial game.
 <div align="center"> <img src="./assets/Model-Architecture.PNG" width="700"><br> <em>Figure 1. Overall architecture of the physics-informed tempoGAN.</em> </div>
 
-#📜 Citation
+# RESULT
+
+Key Findings
+
+Visual reconstruction quality is similar: Both the original tempoGAN and the PINN-enhanced model produce reconstructions that look nearly identical to the naked eye.
+<div align="center"> <img src="./assets/Model-Architecture.PNG" width="700"><br> <em>Figure 1. Overall architecture of the physics-informed tempoGAN.</em> </div>
+
+High-frequency energy improved with physics loss: While tempoGAN reproduces the general flow structures well, it exhibits noticeable discrepancies in the high-wavenumber range of the energy spectrum. Incorporating the physics-informed loss restores these high-frequency components, bringing the spectrum closer to the true DNS.
+
+Enhanced physical consistency: PINN-enforced constraints prevent unphysical patterns in the reconstructed fields, ensuring that the predictions better adhere to the underlying physics.
+
+Frame-wise error reduction: Relative L2 error per frame is slightly improved with the PINN-enhanced model, particularly in regions where fine-scale structures dominate.
+
+
+# Citation
 
 If you find this work useful, please cite:
 
@@ -57,23 +84,6 @@ If you find this work useful, please cite:
   year={2025},
 }
 
-## Directories
-Main source code directories:
-
-`.../tensorflow/datagen:` scene files for generating 2D/3D training data
-
-`.../tensorflow/tools:`   contains necessary tools for inputs, outputs, 
-					    neural networks operation, and etc.
-
-`.../tensorflow/GAN:`     contains the tempoGAN model.
-
-And two data directories were outputs will be written:
-
-`.../tensorflow/2ddata_sim:` contains the training, validation and test data
-
-`.../tensorflow/2ddata_gan:` outputs will be written here
-flow/tempoGAN/ directory (they often
-use relative paths).
 
 
 
