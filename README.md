@@ -70,14 +70,14 @@ Quarter Jumble Strategy	With a small probability, low-resolution inputs are part
 Key Findings
 
 Visual reconstruction quality is similar: Both the original tempoGAN and the PINN-enhanced model produce reconstructions that look nearly identical to the naked eye.
-<div align="center"> <img src="./assets/slice1.PNG" width="700"><br> <em>Figure 1. Overall architecture of the physics-informed tempoGAN.</em> </div>
+<div align="center"> <img src="./assets/slice1.png" width="700"><br> </div>
 
 High-frequency energy improved with physics loss: While tempoGAN reproduces the general flow structures well, it exhibits noticeable discrepancies in the high-wavenumber range of the energy spectrum. Incorporating the physics-informed loss restores these high-frequency components, bringing the spectrum closer to the true DNS.
-<div align="center"> <img src="./assets/2.PNG" width="700"><br> <em>Figure 1. Overall architecture of the physics-informed tempoGAN.</em> </div>
+<div align="center"> <img src="./assets/2.png" width="700"><br>  </div>
 Enhanced physical consistency: PINN-enforced constraints prevent unphysical patterns in the reconstructed fields, ensuring that the predictions better adhere to the underlying physics.
 
 Frame-wise error reduction: Relative L2 error per frame is slightly improved with the PINN-enhanced model, particularly in regions where fine-scale structures dominate.
-<div align="center"> <img src="./assets/3.PNG" width="700"><br> <em>Figure 1. Overall architecture of the physics-informed tempoGAN.</em> </div>
+<div align="center"> <img src="./assets/3.png" width="700"><br> </div>
 
 # Citation
 
