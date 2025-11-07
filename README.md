@@ -19,7 +19,6 @@ Physics-informed losses: spectral energy and divergence-free constraints
 Modular code design for training, testing, and visualization
 
 📂 Project Structure
-.
 ├── train_tempoGAN.py        # Training script
 ├── test_tempoGAN.py         # Inference and evaluation
 ├── tempoGAN_model.py        # Generator and discriminators definition
