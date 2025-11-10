@@ -36,8 +36,15 @@ Main source code directories:
 
 # Data Preparation
 
-The dataset contains 3D DNS velocity fields (U, V, W) for freely decaying isotropic turbulence.
-Before training, preprocess the data using the provided data preparation scripts.
+The dataset used in this work is derived from a 3D homogeneous isotropic turbulence (HIT) dataset provided by RWTH Aachen University.
+It consists of Direct Numerical Simulation (DNS) snapshots capturing velocity fields (U, V, W) at multiple time steps for freely decaying isotropic turbulence.
+These high-fidelity DNS fields serve as ground truth for both spatial and temporal super-resolution training.
+
+Detailed dataset information, including generation methodology and access instructions, can be found at the
+HIT Turbulence Dataset – RWTH Aachen (2025)
+.
+
+Before training, preprocess the raw DNS data using the provided data preparation script to generate normalized low- and high-resolution pairs suitable for model input.
 
 
 # Training
