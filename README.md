@@ -36,8 +36,6 @@ Main source code directories:
 
 # Data Preparation
 
-## 📘 **Data Preparation**
-
 The dataset used in this work is derived from a **3D homogeneous isotropic turbulence (HIT) dataset** provided by **RWTH Aachen University**.  
 It consists of **Direct Numerical Simulation (DNS)** snapshots capturing **velocity fields (U, V, W)** at multiple time steps for freely decaying isotropic turbulence.  
 These high-fidelity DNS fields serve as ground truth for both spatial and temporal super-resolution training.
