@@ -88,7 +88,7 @@ Key Findings
 Visual reconstruction quality is similar: Both the original tempoGAN and the PINN-enhanced model produce reconstructions that look nearly identical to the naked eye.
 <div align="center">
   <img src="./assets/slice1.png" alt="slice1"
-       style="width:100%; max-width:800px; border:1px solid #ddd; border-radius:8px;">
+       style="width:120%; max-width:800px; border:1px solid #ddd; border-radius:8px;">
 </div>
 High-frequency energy improved with physics loss: While tempoGAN reproduces the general flow structures well, it exhibits noticeable discrepancies in the high-wavenumber range of the energy spectrum. Incorporating the physics-informed loss restores these high-frequency components, bringing the spectrum closer to the true DNS.
 <div align="center">
@@ -100,9 +100,12 @@ Enhanced physical consistency: PINN-enforced constraints prevent unphysical patt
 Frame-wise error reduction: Relative L2 error per frame is slightly improved with the PINN-enhanced model, particularly in regions where fine-scale structures dominate.
 <div align="center">
   <img src="./assets/3.png" alt="3"
-       style="width:100%; max-width:800px; border:1px solid #ddd; border-radius:8px;">
+       style="width:90%; max-width:800px; border:1px solid #ddd; border-radius:8px;">
 </div>
-
+<div align="center">
+  <img src="./assets/4png.png" alt="4"
+       style="width:200%; max-width:1500px; border:1px solid #ddd; border-radius:8px;">
+</div>
 # Citation
 
 If you find this work useful, please consider citing the corresponding paper:
