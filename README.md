@@ -41,7 +41,7 @@ It consists of **Direct Numerical Simulation (DNS)** snapshots capturing **veloc
 These high-fidelity DNS fields serve as ground truth for both spatial and temporal super-resolution training.
 
 Detailed dataset information, including generation methodology and access instructions, can be found at  
-➡️ [**HIT Turbulence Dataset – RWTH Aachen (2025)**](https://ryleymcconkey.com/2025/08/HIT-turbulence-dataset/)
+➡️ [**HIT Turbulence Dataset – RWTH Aachen**](https://ryleymcconkey.com/2025/08/HIT-turbulence-dataset/)
 
 Before training, preprocess the raw DNS data using the provided data preparation script to generate normalized low- and high-resolution pairs suitable for model input.
 
@@ -70,21 +70,38 @@ Spatial Discriminator (Dₛ)	Evaluates spatial realism of each high-resolution f
 Temporal Discriminator (Dₜ)	Ensures temporal coherence across consecutive frames by discriminating short frame sequences.
 Physics-informed Losses	Incorporate spectral and divergence-free constraints to enforce physical consistency.
 Quarter Jumble Strategy	With a small probability, low-resolution inputs are partially shuffled (¼-volume permutation) to prevent the discriminator from becoming overly dominant, maintaining a balanced adversarial game.
-<div align="center"> <img src="./assets/Model-Architecture.PNG" width="700"><br> <em>Figure 1. Overall architecture of the physics-informed tempoGAN.</em> </div>
+<div align="center">
+  <img src="./assets/Model-Architecture.PNG" alt="Model Architecture"
+       style="width90%; max-width:800px; border:1px solid #ddd; border-radius:8px;">
+</div>
+
+<p align="center" style="font-size:16px; margin-top:8px;">
+  <b>Figure 1.</b> Overall architecture of the physics-informed tempoGAN.
+</p>
+
+</div>
 
 # RESULT
 
 Key Findings
 
 Visual reconstruction quality is similar: Both the original tempoGAN and the PINN-enhanced model produce reconstructions that look nearly identical to the naked eye.
-<div align="center"> <img src="./assets/slice1.png" width="700"><br> </div>
-
+<div align="center">
+  <img src="./assets/slice1.png" alt="slice1"
+       style="width:100%; max-width:800px; border:1px solid #ddd; border-radius:8px;">
+</div>
 High-frequency energy improved with physics loss: While tempoGAN reproduces the general flow structures well, it exhibits noticeable discrepancies in the high-wavenumber range of the energy spectrum. Incorporating the physics-informed loss restores these high-frequency components, bringing the spectrum closer to the true DNS.
-<div align="center"> <img src="./assets/2.png" width="700"><br>  </div>
+<div align="center">
+  <img src="./assets/2.png" alt="2"
+       style="width:100%; max-width:800px; border:1px solid #ddd; border-radius:8px;">
+</div>
 Enhanced physical consistency: PINN-enforced constraints prevent unphysical patterns in the reconstructed fields, ensuring that the predictions better adhere to the underlying physics.
 
 Frame-wise error reduction: Relative L2 error per frame is slightly improved with the PINN-enhanced model, particularly in regions where fine-scale structures dominate.
-<div align="center"> <img src="./assets/3.png" width="700"><br> </div>
+<div align="center">
+  <img src="./assets/3.png" alt="3"
+       style="width:100%; max-width:800px; border:1px solid #ddd; border-radius:8px;">
+</div>
 
 # Citation
 
