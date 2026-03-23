@@ -3,6 +3,14 @@
 This repository presents a physics-guided TempoGAN framework for 3D turbulence super-resolution of freely decaying homogeneous isotropic turbulence.
 The proposed model improves the recovery of fine-scale turbulent structures and temporal coherence, while incorporating divergence and spectral constraints to enhance physical consistency and mitigate nonphysical spectral artifacts.
 
+## 📄 Paper
+
+**Physics-Guided TempoGAN for Turbulence Super-Resolution**  
+*(preprint)*
+
+👉 [View PDF](./paper/preprint.pdf)
+
+This work identifies anisotropic spectral distortion in GAN-based turbulence reconstruction.
 
 # Overview
 
