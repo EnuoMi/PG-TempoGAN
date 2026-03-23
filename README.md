@@ -11,13 +11,13 @@ Turbulence super-resolution using generative adversarial networks (GANs) has sho
 
 ## 🚀 Key Contributions
 
-- 🔹 Identified **anisotropic spectral distortion** in GAN-based turbulence super-resolution  
-- 🔹 Showed that **directional spectral agreement can mask true energy imbalance**
-- 🔹 Introduced **physics-informed losses**:
+-  Identified **anisotropic spectral distortion** in GAN-based turbulence super-resolution  
+-  Showed that **directional spectral agreement can mask true energy imbalance**
+-  Introduced **physics-informed losses**:
   - divergence-free constraint
   - spectral energy constraint
-- 🔹 Improved reconstruction of **small-scale turbulent structures**
-- 🔹 Provided comprehensive evaluation:
+-  Improved reconstruction of **small-scale turbulent structures**
+-  Provided comprehensive evaluation:
   - 1D / 3D / 2D spectra
   - PDFs
   - SGS stresses
