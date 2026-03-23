@@ -1,14 +1,20 @@
-# Physics-Informed tempoGAN for 3D Turbulence Reconstruction
+# Physics-Guided TempoGAN for Turbulence Super-Resolution
 
-This repository contains the implementation of a physics-informed tempoGAN framework for reconstructing and predicting freely decaying isotropic turbulence.
-Our model enhances spatial resolution and temporal coherence of turbulent flow fields while enforcing physical consistency through spectral and divergence-free constraints.
+This repository presents a physics-guided TempoGAN framework for 3D turbulence super-resolution of freely decaying homogeneous isotropic turbulence.
+The proposed model improves the recovery of fine-scale turbulent structures and temporal coherence, while incorporating divergence and spectral constraints to enhance physical consistency and mitigate nonphysical spectral artifacts.
 
 
 # Overview
 
-Turbulent flows are inherently chaotic and multi-scale, making accurate reconstruction extremely challenging.
-We adopt a GAN-based spatio-temporal super-resolution model (tempoGAN) combined with physics-informed loss functions, achieving high-fidelity and physically plausible results for decaying isotropic turbulence.
+Turbulence super-resolution using generative adversarial networks (GANs) has shown strong capability in reconstructing high-resolution flow fields from coarse inputs.  
+However, most existing studies primarily evaluate performance through visual similarity or directional energy spectra, which may overlook deeper physical inconsistencies.
 
+In this work, we show that GAN-based turbulence reconstruction can exhibit **anisotropic spectral distortion**, where directional spectra appear accurate, while the full three-dimensional energy distribution reveals nonphysical energy redistribution at high wavenumbers.
+
+To address this issue, we propose a **physics-guided TempoGAN (PGTempoGAN)** framework that incorporates divergence, vorticity, and spectral constraints into the training process.  
+These constraints improve the reconstruction of fine-scale turbulent structures and enhance the physical consistency of the generated flow fields.
+
+In this work, we demonstrate that:
 Key Contributions
 
 3D convolutional tempoGAN for volumetric turbulence super-resolution
