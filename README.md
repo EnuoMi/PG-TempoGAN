@@ -112,7 +112,7 @@ PGTempoGAN significantly improves high-wavenumber behavior:
 
 ### Error Evaluation
 
-Physics-guided constraints reduce reconstruction error, especially in fine-scale regions:
+The incorporation of physics-guided constraints results in a lower single-frame NRMSE, reflecting improved reconstruction accuracy:
 
 <div align="center">
   <img src="./assets/3.png" width="600">
@@ -136,7 +136,8 @@ If you find this work useful, please consider citing the corresponding paper:
 
 ```
 @article{Wang2025PINN-tempoGAN,
-    title={Physics-Informed Super-Resolution of Turbulent Flows using a Temporal Generative Adversarial Network},
+    title={Physics-guided TempoGAN for turbulence super-resolution: mitigating
+anisotropic spectral distortion},
     author={YUJIE WANG,ZHISONG WANG},
     year={2025}
 }
