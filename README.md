@@ -15,7 +15,6 @@ Turbulence super-resolution using generative adversarial networks (GANs) has sho
 - 🔹 Showed that **directional spectral agreement can mask true energy imbalance**
 - 🔹 Introduced **physics-informed losses**:
   - divergence-free constraint
-  - vorticity consistency
   - spectral energy constraint
 - 🔹 Improved reconstruction of **small-scale turbulent structures**
 - 🔹 Provided comprehensive evaluation:
@@ -79,7 +78,6 @@ python test_tempoGAN.py
 We extend the original TempoGAN by introducing physics-guided constraints:
 
 - Divergence loss → enforce incompressibility  
-- Vorticity loss → improve small-scale structures  
 - Spectral loss → regularize energy distribution  
 
 These constraints guide the model toward physically consistent solutions while preserving temporal coherence.
