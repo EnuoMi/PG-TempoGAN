@@ -6,13 +6,7 @@ The proposed model improves the recovery of fine-scale turbulent structures and 
 
 # Overview
 
-Turbulence super-resolution using generative adversarial networks (GANs) has shown strong capability in reconstructing high-resolution flow fields from coarse inputs.  
-However, most existing studies primarily evaluate performance through visual similarity or directional energy spectra, which may overlook deeper physical inconsistencies.
-
-In this work, we show that GAN-based turbulence reconstruction can exhibit **anisotropic spectral distortion**, where directional spectra appear accurate, while the full three-dimensional energy distribution reveals nonphysical energy redistribution at high wavenumbers.
-
-To address this issue, we propose a **physics-guided TempoGAN (PGTempoGAN)** framework that incorporates divergence, vorticity, and spectral constraints into the training process.  
-These constraints improve the reconstruction of fine-scale turbulent structures and enhance the physical consistency of the generated flow fields.
+Turbulence super-resolution using generative adversarial networks (GANs) has shown strong capability in reconstructing high-resolution flow fields from coarse inputs.However, most existing studies primarily evaluate performance through visual similarity or directional energy spectra, which may overlook deeper physical inconsistencies.In this work, we show that GAN-based turbulence reconstruction can exhibit **anisotropic spectral distortion**, where directional spectra appear accurate, while the full three-dimensional energy distribution reveals nonphysical energy redistribution at high wavenumbers.To address this issue, we propose a **physics-guided TempoGAN (PGTempoGAN)** framework that incorporates divergence, vorticity, and spectral constraints into the training process.  These constraints improve the reconstruction of fine-scale turbulent structures and enhance the physical consistency of the generated flow fields.
 
 In this work, we demonstrate that:
 Key Contributions
@@ -24,6 +18,36 @@ Temporal discriminator to ensure time-consistent predictions
 Physics-informed losses: spectral energy and divergence-free constraints
 
 Modular code design for training, testing, and visualization
+
+## 🚀 Key Contributions
+
+- 🔹 Identified **anisotropic spectral distortion** in GAN-based turbulence super-resolution  
+- 🔹 Showed that **directional spectral agreement can mask true energy imbalance**
+- 🔹 Introduced **physics-informed losses**:
+  - divergence-free constraint
+  - vorticity consistency
+  - spectral energy constraint
+- 🔹 Improved reconstruction of **small-scale turbulent structures**
+- 🔹 Provided comprehensive evaluation:
+  - 1D / 3D / 2D spectra
+  - PDFs
+  - SGS stresses
+  - two-point correlations
+
+---
+
+## 🔬 Key Insight
+
+Directional agreement does not imply physical consistency.
+
+Even when spectra along coordinate directions match DNS well,  
+the full 3D energy distribution may reveal:
+
+👉 **anisotropic energy amplification at high wavenumbers**
+
+This highlights a fundamental limitation of standard CNN-based GAN models:
+
+> ❗ **Directional consistency ≠ isotropic spectral fidelity**
 
 ## Directories
 Main source code directories:
