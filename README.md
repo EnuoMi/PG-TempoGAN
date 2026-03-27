@@ -136,9 +136,9 @@ These results confirm improved **statistical consistency** of reconstructed turb
 If you find this work useful, please consider citing the corresponding paper:
 
 ```
-@article{Wang2025PGtempoGAN,
+@article{Wang2026PGtempoGAN,
     title={Physics-guided TempoGAN for turbulence super-resolution: mitigating
 anisotropic spectral distortion},
     author={YUJIE WANG,ZHISONG WANG},
-    year={2025}
+    year={2026}
 }
